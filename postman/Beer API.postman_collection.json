@@ -1,114 +1,182 @@
 {
-	"variables": [],
 	"info": {
+		"_postman_id": "fc1bffaa-5dec-42b2-90e1-74b7834d335f",
 		"name": "Beer API",
-		"_postman_id": "2310266f-1c5d-0bd8-e78f-39e9340d8f95",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "List Beers",
 			"request": {
-				"url": "http://localhost:8080/api/v1/beers",
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE1OTE2NzAwODgsImlhdCI6MTU5MTY1MjA4OH0.j6nd_s7VFvPVbh4abKrjeaYxgmDCxMxc0O18lPz2juONf3zvKBO7vx-w2WO2b_BJnOl5vAI_5DLg5RrgIZ5WEg",
-						"description": ""
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE1OTE2NzAwODgsImlhdCI6MTU5MTY1MjA4OH0.j6nd_s7VFvPVbh4abKrjeaYxgmDCxMxc0O18lPz2juONf3zvKBO7vx-w2WO2b_BJnOl5vAI_5DLg5RrgIZ5WEg"
 					}
 				],
-				"body": {},
-				"description": ""
+				"url": {
+					"raw": "http://localhost:8080/beers-api/api/v1/beers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"beers-api",
+						"api",
+						"v1",
+						"beers"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Create Beer",
 			"request": {
-				"url": "http://localhost:8080/api/v1/beers",
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Colorado appia\",\n\t\"brand\": \"Colorado\",\n\t\"max\": 20,\n\t\"quantity\": 10,\n\t\"type\": \"LAGER\"\n}"
+					"raw": "{\n\t\"name\": \"Interestelar\",\n\t\"brand\": \"Hocus Pocus\",\n\t\"max\": 100,\n\t\"quantity\": 32,\n\t\"type\": \"IPA\"\n}"
 				},
-				"description": ""
+				"url": {
+					"raw": "http://localhost:8080/beers-api/api/v1/beers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"beers-api",
+						"api",
+						"v1",
+						"beers"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Get beer by name",
 			"request": {
-				"url": "http://localhost:8080/api/v1/beers/Colorado appia",
 				"method": "GET",
 				"header": [],
-				"body": {},
-				"description": ""
+				"url": {
+					"raw": "http://localhost:8080/beers-api/api/v1/beers/Interestelar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"beers-api",
+						"api",
+						"v1",
+						"beers",
+						"Interestelar"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Delete beer by id",
 			"request": {
-				"url": "http://localhost:8080/api/v1/beers/1",
 				"method": "DELETE",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
-				"body": {},
-				"description": ""
+				"url": {
+					"raw": "http://localhost:8080/beers-api/api/v1/beers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"beers-api",
+						"api",
+						"v1",
+						"beers",
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Increment beer stock",
 			"request": {
-				"url": "http://localhost:8080/api/v1/beers/1/increment",
 				"method": "PATCH",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n\t\"quantity\": 2\n}"
 				},
-				"description": ""
+				"url": {
+					"raw": "http://localhost:8080/beers-api/api/v1/beers/2/increment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"beers-api",
+						"api",
+						"v1",
+						"beers",
+						"2",
+						"increment"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Decrement beer stock",
 			"request": {
-				"url": "http://localhost:8080/api/v1/beers/1/decrement",
 				"method": "PATCH",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n\t\"quantity\": 2\n}"
 				},
-				"description": ""
+				"url": {
+					"raw": "http://localhost:8080/beers-api/api/v1/beers/2/decrement",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"beers-api",
+						"api",
+						"v1",
+						"beers",
+						"2",
+						"decrement"
+					]
+				}
 			},
 			"response": []
 		}
