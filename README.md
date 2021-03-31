@@ -1,5 +1,6 @@
 # Beer API
 API para gerenciamento de cervejas, criada através do curso online da [Digital Innovation One](https://digitalinnovation.one/)
+
 [Desenvolvimento de testes unitários para validar uma API REST de gerenciamento estoques de cerveja](https://gft.digitalinnovation.one/project/desenvolvimento-de-testes-unitarios-para-validar-uma-api-rest-de-gerenciamento-estoques-de-cerveja/learning/d00f891f-65bb-4149-85f0-57d771116214?back=/track/java-developer-1)
 
 Criado a partir do projeto [beer_api_digital_innovation_one](https://github.com/vagnerpgss/beer_api_digital_innovation_one)
@@ -15,14 +16,12 @@ Criado a partir do projeto [beer_api_digital_innovation_one](https://github.com/
 * [docker] - em breve
 * [docker-compose] - em breve
 
-
 ## Rodando a aplicação
 Para executar o projeto no terminal, digite o seguinte comando:
 
 ```shell script
 mvn spring-boot:run 
 ```
-
 
 ## Testes
 Para executar a suíte de testes desenvolvida durante a live coding, basta executar o seguinte comando:
@@ -31,14 +30,14 @@ Para executar a suíte de testes desenvolvida durante a live coding, basta execu
 mvn clean test
 ```
 
-
 ## Docker
 TODO - Dockerizar a aplicação
-
 
 ## Documentação da API
 Documentação através do [Swagger 2](http://localhost:8080/beers-api/swagger-ui/#/).
 
+## Postman
+Collection do Postman na pasta /postman
 
 ## URL do Projeto
 Após executar o comando acima, basta apenas abrir o seguinte endereço e visualizar a execução do projeto:
