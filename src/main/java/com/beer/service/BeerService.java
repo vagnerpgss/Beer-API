@@ -1,5 +1,6 @@
 package com.beer.service;
 
+import com.beer.exception.BeerStockDecreaseException;
 import lombok.AllArgsConstructor;
 import com.beer.dto.BeerDTO;
 import com.beer.entity.Beer;
@@ -68,5 +69,16 @@ public class BeerService {
             return beerMapper.toDTO(incrementedBeerStock);
         }
         throw new BeerStockExceededException(id, quantityToIncrement);
+    }
+
+    public BeerDTO decrement(Long id, int quantityToDecrement) throws BeerNotFoundException, BeerStockDecreaseException {
+        Beer beerToDecrementStock = verifyIfExists(id);
+        int quantityAfterDecrement = beerToDecrementStock.getQuantity() - quantityToDecrement;
+        if (quantityAfterDecrement >= 0) {
+            beerToDecrementStock.setQuantity(beerToDecrementStock.getQuantity() - quantityToDecrement);
+            Beer decrementedBeerStock = beerRepository.save(beerToDecrementStock);
+            return beerMapper.toDTO(decrementedBeerStock);
+        }
+        throw new BeerStockDecreaseException(id, quantityToDecrement);
     }
 }

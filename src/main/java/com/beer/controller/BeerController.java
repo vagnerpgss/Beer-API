@@ -2,6 +2,7 @@ package com.beer.controller;
 
 import com.beer.dto.QuantityDTO;
 import com.beer.exception.BeerAlreadyRegisteredException;
+import com.beer.exception.BeerStockDecreaseException;
 import com.beer.exception.BeerStockExceededException;
 import com.beer.service.BeerService;
 import io.swagger.annotations.Api;
@@ -55,5 +56,10 @@ public class BeerController implements BeerControllerDocs {
     @PatchMapping("/{id}/increment")
     public BeerDTO increment(@PathVariable Long id, @RequestBody @Valid QuantityDTO quantityDTO) throws BeerNotFoundException, BeerStockExceededException {
         return beerService.increment(id, quantityDTO.getQuantity());
+    }
+
+    @PatchMapping("/{id}/decrement")
+    public BeerDTO decrement(Long id, @Valid QuantityDTO quantityDTO) throws BeerNotFoundException, BeerStockDecreaseException {
+        return beerService.decrement(id, quantityDTO.getQuantity());
     }
 }
